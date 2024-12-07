@@ -88,6 +88,36 @@
         .hero-image img {
             max-width: 400px;
         }
+
+        /* Process Section */
+        .process-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .process-section h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #260ac9;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .step {
+            max-width: 150px;
+            text-align: center;
+        }
+        .step i {
+            font-size: 2rem;
+            color: #260ac9;
+        }
+        .step p {
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +146,34 @@
         </div>
         <div class="hero-image">
             <img src="illustration.png" alt="Secure Payments Illustration">
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <h2>Get ready for a safer, smarter way to transact online – launching soon!</h2>
+        <p>TrustKanga is designed to eliminate the risks of online transactions. Whether you're buying, selling, or exchanging services, we provide a secure platform that keeps your money safe until you're 100% satisfied.</p>
+        <div class="process-steps">
+            <div class="step">
+                <i class="fas fa-handshake"></i>
+                <p><strong>1. Buyer and Seller agree to terms</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-money-check"></i>
+                <p><strong>2. Buyer submits payment to TrustKanga</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-box-open"></i>
+                <p><strong>3. Seller delivers goods or services</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-thumbs-up"></i>
+                <p><strong>4. Buyer approves goods or services</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-lock"></i>
+                <p><strong>5. TrustKanga releases payment to seller</strong></p>
+            </div>
         </div>
     </section>
 </body>
