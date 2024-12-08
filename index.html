@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustKanga - Your Shield Against Payment Fraud</title>
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* General styles */
         body {
@@ -39,6 +40,27 @@
         }
 
         .nav-links a:hover {
+            color: #260ac9;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #4d4d4d;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
             color: #260ac9;
         }
 
@@ -135,11 +157,26 @@
 
             .header-section {
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: space-between;
             }
 
             .nav-links {
-                margin-top: 10px;
+                display: none;
+                flex-direction: column;
+                background-color: #ffffff;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
             }
 
             .process-steps {
@@ -161,6 +198,7 @@
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
         </nav>
+        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
     </header>
 
     <!-- Hero Section -->
@@ -208,7 +246,15 @@
             </div>
         </div>
     </section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
+
 
 
