@@ -29,7 +29,6 @@
             padding: 20px 40px;
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
         }
         .header-logo img {
             max-width: 150px;
@@ -46,39 +45,6 @@
         }
         .nav-links a:hover {
             color: #260ac9;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #4d4d4d;
-        }
-        .mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20px 0;
-        }
-        .mobile-nav a {
-            display: block;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: #4d4d4d;
-            font-weight: bold;
-            border-bottom: 1px solid #f1f1f1;
-        }
-        .mobile-nav a:hover {
-            background-color: #260ac9;
-            color: #ffffff;
         }
 
         /* Hero Section */
@@ -119,20 +85,55 @@
             max-width: 400px;
         }
 
+        /* Process Section */
+        .process-section {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+        }
+        .process-section h2 {
+            font-size: 2rem;
+            color: #260ac9;
+            margin-bottom: 20px;
+        }
+        .process-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        .step {
+            text-align: center;
+            max-width: 150px;
+        }
+        .step img {
+            width: 100%;
+            max-width: 70px;
+            margin-bottom: 10px;
+        }
+        .step p {
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
         /* Media Queries */
         @media screen and (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: flex;
-            }
             .hero-section {
                 flex-direction: column;
                 text-align: center;
             }
             .hero-text, .hero-image {
                 max-width: 100%;
+            }
+            .process-steps {
+                flex-direction: column;
             }
         }
     </style>
@@ -149,17 +150,6 @@
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <div class="mobile-nav">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="blog.html">Blog</a>
-            <a href="contact.html">Contact</a>
-        </div>
     </header>
 
     <!-- Hero Section -->
@@ -173,15 +163,32 @@
         </div>
     </section>
 
-    <script>
-        // Hamburger menu functionality
-        const hamburger = document.querySelector('.hamburger');
-        const mobileNav = document.querySelector('.mobile-nav');
-
-        hamburger.addEventListener('click', () => {
-            mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
-        });
-    </script>
+    <!-- Process Section -->
+    <section class="process-section">
+        <h2>Get ready for a safer, smarter way to transact online – launching soon!</h2>
+        <p>TrustKanga is designed to eliminate the risks of online transactions. Whether you're buying, selling, or exchanging services, we provide a secure platform that keeps your money safe until you're 100% satisfied.</p>
+        <div class="process-steps">
+            <div class="step">
+                <i class="fas fa-handshake"></i>
+                <p><strong>1. Buyer and Seller agree to terms</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-money-check"></i>
+                <p><strong>2. Buyer submits payment to TrustKanga</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-box-open"></i>
+                <p><strong>3. Seller delivers goods or services</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-thumbs-up"></i>
+                <p><strong>4. Buyer approves goods or services</strong></p>
+            </div>
+            <div class="step">
+                <i class="fas fa-lock"></i>
+                <p><strong>5. TrustKanga releases payment to seller</strong></p>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
-
