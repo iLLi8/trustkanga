@@ -25,9 +25,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 20px;
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Responsive adjustment */
         }
         .header-logo img {
             max-width: 150px;
@@ -36,6 +37,7 @@
             display: flex;
             gap: 20px;
             align-items: center;
+            flex-wrap: wrap; /* Wrap navigation links */
         }
         .nav-links a {
             text-decoration: none;
@@ -61,28 +63,28 @@
         /* Hero Section */
         .hero-section {
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 40px;
             background-color: #ffffff;
-            flex-direction: row-reverse; /* Moves the text to the right */
         }
         .hero-text {
-            max-width: 50%;
-            text-align: left;
+            max-width: 90%;
+            text-align: center;
         }
         .hero-text h1 {
             color: #260ac9;
-            font-size: 64px;
+            font-size: 1.8rem;
             line-height: 1.2;
         }
         .hero-text p {
             margin: 20px 0;
-            font-size: 18px;
+            font-size: 1rem;
             color: #555;
         }
         .hero-image {
-            max-width: 50%;
+            max-width: 90%;
             text-align: center;
         }
         .hero-image img {
@@ -92,31 +94,78 @@
         /* Process Section */
         .process-section {
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
             background-color: #f9f9f9;
         }
         .process-section h2 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: #260ac9;
         }
         .process-steps {
             display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
+            justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
         .step {
-            max-width: 150px;
             text-align: center;
+            max-width: 150px;
         }
         .step i {
             font-size: 2rem;
             color: #260ac9;
         }
         .step p {
-            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        /* Buttons */
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .cta-primary, .cta-secondary {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 90%;
+        }
+        .cta-primary {
+            background-color: #260ac9;
+            color: #ffffff;
+        }
+        .cta-secondary {
+            background-color: #ffffff;
+            color: #260ac9;
+            border: 2px solid #260ac9;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero-text h1 {
+                font-size: 1.5rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.2rem;
+            }
+            .hero-text p {
+                font-size: 0.9rem;
+            }
+            .cta-primary, .cta-secondary {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -152,7 +201,6 @@
     <!-- Process Section -->
     <section class="process-section">
         <h2>Get ready for a safer, smarter way to transact online – launching soon!</h2>
-        <p>TrustKanga is designed to eliminate the risks of online transactions. Whether you're buying, selling, or exchanging services, we provide a secure platform that keeps your money safe until you're 100% satisfied.</p>
         <div class="process-steps">
             <div class="step">
                 <i class="fas fa-handshake"></i>
