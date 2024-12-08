@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustKanga - Your Shield Against Payment Fraud</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     <style>
         /* General styles */
         body {
@@ -13,10 +13,11 @@
             padding: 0;
             background-color: #f9f9f9;
         }
+
         h1, h2 {
             color: #2d2d2d;
-            font-weight: bold;
         }
+
         p {
             color: #4d4d4d;
         }
@@ -30,20 +31,39 @@
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .header-logo img {
             max-width: 150px;
         }
+
         .nav-links {
             display: flex;
             gap: 20px;
             align-items: center;
         }
+
         .nav-links a {
             text-decoration: none;
             color: #4d4d4d;
             font-weight: bold;
         }
+
         .nav-links a:hover {
+            color: #260ac9;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            color: #4d4d4d;
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
             color: #260ac9;
         }
 
@@ -54,78 +74,43 @@
             align-items: center;
             padding: 40px;
             background-color: #ffffff;
-            flex-direction: row-reverse; /* Moves the text to the right */
+            flex-wrap: wrap;
         }
+
         .hero-text {
             max-width: 50%;
             text-align: left;
         }
+
         .hero-text h1 {
             color: #260ac9;
-            font-size: 64px;
+            font-size: 3rem; /* Adjust size for mobile */
             line-height: 1.2;
         }
+
         .hero-text p {
             margin: 20px 0;
-            font-size: 18px;
+            font-size: 1rem; /* Adjust size for mobile */
             color: #555;
         }
-        .hero-image {
+
+        .hero-animation {
             max-width: 50%;
             text-align: center;
         }
-        .hero-image img {
-            max-width: 400px;
-        }
 
-        /* Process Section */
-        .process-section {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-        }
-        .process-section h2 {
-            font-size: 2rem;
-            color: #260ac9;
-            margin-bottom: 20px;
-        }
-        .process-section p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-        .process-steps {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
-        }
-        .step {
-            text-align: center;
-            max-width: 150px;
-        }
-        .step i {
-            font-size: 2rem;
-            color: #260ac9; /* Ensure icons are blue */
-        }
-        .step p {
-            font-size: 0.9rem;
-            color: #333;
-            line-height: 1.4;
-        }
-
-        /* Media Queries */
         @media screen and (max-width: 768px) {
             .hero-section {
                 flex-direction: column;
+            }
+
+            .hero-text, .hero-animation {
+                max-width: 100%;
                 text-align: center;
             }
-            .hero-text, .hero-image {
-                max-width: 100%;
-            }
-            .process-steps {
-                flex-direction: column;
+
+            .hero-text h1 {
+                font-size: 2rem;
             }
         }
     </style>
@@ -141,6 +126,10 @@
             <a href="about.html">About Us</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
+            <div class="social-icons">
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            </div>
         </nav>
     </header>
 
@@ -150,36 +139,14 @@
             <h1>Your Shield Against Payment Fraud</h1>
             <p>Say goodbye to online scams. Our trusted payment system ensures your money is protected until you're satisfied, offering a fraud-free and worry-free transaction experience.</p>
         </div>
-        <div class="hero-image">
-            <img src="illustration.png" alt="Secure Payments Illustration">
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section">
-        <h2>Get ready for a safer, smarter way to transact online – launching soon!</h2>
-        <p>TrustKanga is designed to eliminate the risks of online transactions. Whether you're buying, selling, or exchanging services, we provide a secure platform that keeps your money safe until you're 100% satisfied.</p>
-        <div class="process-steps">
-            <div class="step">
-                <i class="fas fa-handshake"></i>
-                <p><strong>1. Buyer and Seller agree to terms</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-money-check"></i>
-                <p><strong>2. Buyer submits payment to TrustKanga</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-box-open"></i>
-                <p><strong>3. Seller delivers goods or services</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-thumbs-up"></i>
-                <p><strong>4. Buyer approves goods or services</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-lock"></i>
-                <p><strong>5. TrustKanga releases payment to seller</strong></p>
-            </div>
+        <div class="hero-animation">
+            <dotlottie-player 
+                src="https://lottie.host/c378788d-856a-4a8f-b946-26ca4f3cdf13/Kd0Blj5UrE.lottie" 
+                background="transparent" 
+                speed="1" 
+                style="width: 300px; height: 300px" 
+                loop autoplay>
+            </dotlottie-player>
         </div>
     </section>
 </body>
