@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TrustKanga - Your Shield Against Payment Fraud</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
     <style>
         /* General styles */
@@ -58,23 +59,19 @@
         }
 
         .social-icons a {
-            color: #4d4d4d;
+            color: #260ac9;
             font-size: 1.2rem;
             text-decoration: none;
-        }
-
-        .social-icons a:hover {
-            color: #260ac9;
         }
 
         /* Hero Section */
         .hero-section {
             display: flex;
+            flex-direction: row-reverse;
             justify-content: space-between;
             align-items: center;
             padding: 40px;
             background-color: #ffffff;
-            flex-wrap: wrap;
         }
 
         .hero-text {
@@ -84,22 +81,29 @@
 
         .hero-text h1 {
             color: #260ac9;
-            font-size: 3rem; /* Adjust size for mobile */
+            font-size: 48px;
             line-height: 1.2;
         }
 
         .hero-text p {
             margin: 20px 0;
-            font-size: 1rem; /* Adjust size for mobile */
+            font-size: 18px;
             color: #555;
+        }
+
+        .hero-image {
+            max-width: 40%;
+        }
+
+        .hero-image img {
+            max-width: 100%;
         }
 
         .hero-animation {
             max-width: 50%;
-            text-align: center;
         }
 
-        /* Bottom Section */
+        /* Process Section */
         .process-section {
             text-align: center;
             padding: 40px 20px;
@@ -107,28 +111,22 @@
         }
 
         .process-section h2 {
-            font-size: 2rem;
-            color: #333;
             margin-bottom: 20px;
-        }
-
-        .process-section p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 40px;
+            font-size: 1.8rem;
+            color: #260ac9;
         }
 
         .process-steps {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            align-items: flex-start;
             gap: 20px;
             flex-wrap: wrap;
-            margin-bottom: 40px;
         }
 
         .step {
-            text-align: center;
             max-width: 150px;
+            text-align: center;
         }
 
         .step i {
@@ -139,33 +137,13 @@
         .step p {
             margin-top: 10px;
         }
-
-        @media screen and (max-width: 768px) {
-            .hero-section {
-                flex-direction: column;
-            }
-
-            .hero-text, .hero-animation {
-                max-width: 100%;
-                text-align: center;
-            }
-
-            .hero-text h1 {
-                font-size: 2rem;
-            }
-
-            .process-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Header Section -->
     <header class="header-section">
         <div class="header-logo">
-            <img src="logo.png" alt="TrustKanga Logo">
+            <img src="https://raw.githubusercontent.com/iLLi8/trustkanga/main/637c9c773b83dec8fc74754f_Transparent%20Logo-p-130x130q80.png" alt="TrustKanga Logo">
         </div>
         <nav class="nav-links">
             <a href="index.html">Home</a>
@@ -186,13 +164,7 @@
             <p>Say goodbye to online scams. Our trusted payment system ensures your money is protected until you're satisfied, offering a fraud-free and worry-free transaction experience.</p>
         </div>
         <div class="hero-animation">
-            <dotlottie-player 
-                src="https://lottie.host/c378788d-856a-4a8f-b946-26ca4f3cdf13/Kd0Blj5UrE.lottie" 
-                background="transparent" 
-                speed="1" 
-                style="width: 300px; height: 300px" 
-                loop autoplay>
-            </dotlottie-player>
+            <dotlottie-player src="https://lottie.host/c378788d-856a-4a8f-b946-26ca4f3cdf13/Kd0Blj5UrE.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
         </div>
     </section>
 
@@ -225,4 +197,5 @@
     </section>
 </body>
 </html>
+
 
