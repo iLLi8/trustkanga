@@ -15,6 +15,7 @@
         }
         h1, h2 {
             color: #2d2d2d;
+            font-weight: bold;
         }
         p {
             color: #4d4d4d;
@@ -25,10 +26,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 20px 40px;
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            flex-wrap: wrap; /* Responsive adjustment */
+            position: relative;
         }
         .header-logo img {
             max-width: 150px;
@@ -37,7 +38,6 @@
             display: flex;
             gap: 20px;
             align-items: center;
-            flex-wrap: wrap; /* Wrap navigation links */
         }
         .nav-links a {
             text-decoration: none;
@@ -47,124 +47,92 @@
         .nav-links a:hover {
             color: #260ac9;
         }
-        .social-icons {
-            display: flex;
-            gap: 15px;
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
         }
-        .social-icons a {
-            color: #4d4d4d;
-            font-size: 1.2rem;
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #4d4d4d;
+        }
+        .mobile-nav {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px 0;
+        }
+        .mobile-nav a {
+            display: block;
+            padding: 10px 20px;
             text-decoration: none;
+            color: #4d4d4d;
+            font-weight: bold;
+            border-bottom: 1px solid #f1f1f1;
         }
-        .social-icons a:hover {
-            color: #260ac9;
+        .mobile-nav a:hover {
+            background-color: #260ac9;
+            color: #ffffff;
         }
 
         /* Hero Section */
         .hero-section {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             padding: 40px;
             background-color: #ffffff;
+            flex-direction: row-reverse; /* Moves the text to the right */
         }
         .hero-text {
-            max-width: 90%;
-            text-align: center;
+            max-width: 50%;
+            text-align: left;
         }
         .hero-text h1 {
             color: #260ac9;
-            font-size: 1.8rem;
+            font-size: 64px;
             line-height: 1.2;
+            position: relative;
+            animation: glowing 3s infinite;
+        }
+        @keyframes glowing {
+            0% { text-shadow: 0 0 5px #260ac9; }
+            50% { text-shadow: 0 0 20px #6c63ff; }
+            100% { text-shadow: 0 0 5px #260ac9; }
         }
         .hero-text p {
             margin: 20px 0;
-            font-size: 1rem;
+            font-size: 18px;
             color: #555;
         }
         .hero-image {
-            max-width: 90%;
+            max-width: 50%;
             text-align: center;
         }
         .hero-image img {
             max-width: 400px;
         }
 
-        /* Process Section */
-        .process-section {
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-        .process-section h2 {
-            font-size: 1.5rem;
-            color: #260ac9;
-        }
-        .process-steps {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .step {
-            text-align: center;
-            max-width: 150px;
-        }
-        .step i {
-            font-size: 2rem;
-            color: #260ac9;
-        }
-        .step p {
-            font-size: 0.9rem;
-            color: #333;
-            line-height: 1.4;
-        }
-
-        /* Buttons */
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            align-items: center;
-        }
-        .cta-primary, .cta-secondary {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            width: 90%;
-        }
-        .cta-primary {
-            background-color: #260ac9;
-            color: #ffffff;
-        }
-        .cta-secondary {
-            background-color: #ffffff;
-            color: #260ac9;
-            border: 2px solid #260ac9;
-        }
-
         /* Media Queries */
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 1.5rem;
-            }
+        @media screen and (max-width: 768px) {
             .nav-links {
-                justify-content: center;
+                display: none;
             }
-        }
-
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 1.2rem;
+            .hamburger {
+                display: flex;
             }
-            .hero-text p {
-                font-size: 0.9rem;
+            .hero-section {
+                flex-direction: column;
+                text-align: center;
             }
-            .cta-primary, .cta-secondary {
-                font-size: 0.9rem;
+            .hero-text, .hero-image {
+                max-width: 100%;
             }
         }
     </style>
@@ -180,11 +148,18 @@
             <a href="about.html">About Us</a>
             <a href="blog.html">Blog</a>
             <a href="contact.html">Contact</a>
-            <div class="social-icons">
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            </div>
         </nav>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="mobile-nav">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -198,32 +173,15 @@
         </div>
     </section>
 
-    <!-- Process Section -->
-    <section class="process-section">
-        <h2>Get ready for a safer, smarter way to transact online – launching soon!</h2>
-        <div class="process-steps">
-            <div class="step">
-                <i class="fas fa-handshake"></i>
-                <p><strong>1. Buyer and Seller agree to terms</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-money-check"></i>
-                <p><strong>2. Buyer submits payment to TrustKanga</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-box-open"></i>
-                <p><strong>3. Seller delivers goods or services</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-thumbs-up"></i>
-                <p><strong>4. Buyer approves goods or services</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-lock"></i>
-                <p><strong>5. TrustKanga releases payment to seller</strong></p>
-            </div>
-        </div>
-    </section>
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const mobileNav = document.querySelector('.mobile-nav');
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.style.display = mobileNav.style.display === 'block' ? 'none' : 'block';
+        });
+    </script>
 </body>
 </html>
 
