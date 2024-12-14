@@ -12,34 +12,123 @@
             padding: 0;
             background-color: #f9fafc;
         }
-        header, footer {
-            text-align: center;
+
+        /* Header Styles */
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
             background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        .header-logo img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4d4d4d;
+            font-weight: bold;
+        }
+
+        .nav-links a:hover {
+            color: #260ac9;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #ffffff;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 100%;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+        }
+
+        /* Content Styles */
         .content {
             padding: 40px;
             text-align: center;
         }
+
         h1 {
             color: #260ac9;
         }
+
         p {
             color: #555;
             font-size: 1.1rem;
             line-height: 1.6;
         }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>About Us</h1>
+    <!-- Header Section -->
+    <header class="header-section">
+        <div class="header-logo">
+            <img src="https://raw.githubusercontent.com/iLLi8/trustkanga/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg" alt="TrustKanga Logo">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="https://trustkanga.blogspot.com/2024/12/how-escrow-works-shield-against-online.html" target="_blank" rel="noopener noreferrer">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
     </header>
+
+    <!-- About Us Content -->
     <div class="content">
-        <p>Welcome to TrustKanga! Our mission is to provide a secure and trustworthy platform for online transactions, ensuring peace of mind for both buyers and sellers. Stay tuned for our full launch!</p>
+        <h1>About Us</h1>
+        <p>Welcome to TrustKanga! Our mission is to provide a secure and trustworthy platform for online transactions, ensuring peace of mind for both buyers and sellers.</p>
+        <p>As someone who has experienced the frustration and financial losses caused by online scams, I founded TrustKanga to protect others from the same pitfalls. At TrustKanga, we believe that everyone deserves a safe and worry-free online experience. This is why our platform is designed to eliminate the risks of online transactions, giving you complete confidence every step of the way.</p>
+        <p>To ensure the highest standards of security and compliance, our payment processing is handled by a trusted company that is regulated by the Financial Conduct Authority (FCA). This guarantees that your money is managed safely and transparently, giving you additional peace of mind when using our services.</p>
+        <p>Whether you’re buying, selling, or exchanging services, TrustKanga is your trusted partner for secure online dealings. Stay tuned for our full launch, and join us on our journey to make online transactions safer for everyone!</p>
     </div>
+
+    <!-- Footer -->
     <footer>
         <p>&copy; 2024 TrustKanga. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
+
