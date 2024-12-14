@@ -19,6 +19,7 @@
             padding: 20px 40px;
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
         header .nav-links {
             display: flex;
@@ -31,6 +32,11 @@
         }
         header a:hover {
             color: #260ac9;
+        }
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
         .social-icons {
             display: flex;
@@ -89,6 +95,25 @@
         .contact-section button:hover {
             background-color: #1f089c;
         }
+        @media (max-width: 768px) {
+            header .nav-links {
+                display: none;
+                flex-direction: column;
+                background-color: #ffffff;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                width: 100%;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            header .nav-links.active {
+                display: flex;
+            }
+            .mobile-menu {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -100,18 +125,18 @@
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="/blog/index.html">Blog</a>
-
             <a href="contact.html">Contact</a>
             <div class="social-icons">
                 <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
             </div>
         </nav>
+        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
     </header>
 
     <section class="contact-section">
         <h1>Contact Us</h1>
-        <form>
+        <form action="https://formspree.io/f/mnnqkanb" method="POST">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required>
             
@@ -124,5 +149,13 @@
             <button type="submit">Send Message</button>
         </form>
     </section>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
+
