@@ -12,12 +12,24 @@
             padding: 0;
             background-color: #f9fafc;
         }
-        .header-section {
-            text-align: center;
-            padding: 20px;
-            background-color: #f9f9f9;
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        header .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+        header a {
+            text-decoration: none;
+            color: #4d4d4d;
+            font-weight: bold;
+        }
+        header a:hover {
             color: #260ac9;
         }
         .blog-posts {
@@ -51,19 +63,27 @@
     </style>
 </head>
 <body>
-    <header class="header-section">
-        <h1>Blog</h1>
+    <header>
+        <div class="header-logo">
+            <a href="../index.html"><img src="logo.png" alt="TrustKanga Logo"></a>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About Us</a>
+            <a href="../contact.html">Contact</a>
+        </nav>
     </header>
+
     <div class="blog-posts">
-        <!-- Blog post 1 -->
         <div class="blog-post">
             <h2><a href="how-escrow-works.html">How Escrow Works: A Shield Against Online Scams</a></h2>
             <p>Learn how escrow protects buyers and sellers in online transactions. Discover how it works and why it’s essential in today’s world.</p>
         </div>
         <!-- Add more blog posts here -->
     </div>
+
     <footer>
-        <p>&copy; 2024 TrustKanga. All rights reserved.</p>
+        <p>&copy; 2024 TrustKanga. All rights reserved. | <a href="../index.html">Home</a> | <a href="../about.html">About</a> | <a href="../contact.html">Contact</a></p>
     </footer>
 </body>
 </html>
