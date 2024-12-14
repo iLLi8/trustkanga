@@ -19,9 +19,10 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 40px;
+            padding: 20px;
             background-color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap; /* Adjusts layout for smaller screens */
         }
 
         .header-logo img {
@@ -29,14 +30,28 @@
         }
 
         .nav-links {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffffff;
+            position: absolute;
+            top: 70px;
+            right: 10px;
+            width: 80%;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
             display: flex;
-            gap: 20px;
         }
 
         .nav-links a {
             text-decoration: none;
             color: #4d4d4d;
             font-weight: bold;
+            font-size: 1rem;
+            margin: 10px 0;
         }
 
         .nav-links a:hover {
@@ -44,7 +59,7 @@
         }
 
         .mobile-menu {
-            display: none;
+            display: block;
             font-size: 1.5rem;
             cursor: pointer;
         }
@@ -52,6 +67,8 @@
         .social-icons {
             display: flex;
             gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
         }
 
         .social-icons a {
@@ -66,20 +83,21 @@
 
         .hero-section {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 40px;
+            padding: 20px;
+            text-align: center;
             background-color: #ffffff;
         }
 
         .hero-text {
-            max-width: 50%;
+            max-width: 90%;
         }
 
         .hero-text h1 {
             color: #233dff;
-            font-size: 64px;
-            line-height: 1.2;
+            font-size: 32px;
+            line-height: 1.4;
         }
 
         .hero-text p {
@@ -88,17 +106,18 @@
         }
 
         .hero-animation {
-            max-width: 50%;
+            max-width: 300px;
+            margin: 20px auto;
         }
 
         .process-section {
             text-align: center;
-            padding: 40px 20px;
+            padding: 20px;
             background-color: #f9f9f9;
         }
 
         .process-section h2 {
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: #333;
             margin-bottom: 20px;
         }
@@ -111,9 +130,9 @@
 
         .process-steps {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
         .step {
@@ -132,57 +151,32 @@
             line-height: 1.4;
         }
 
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-            }
+        .cta-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            width: 100%;
+        }
 
-            .hero-text {
-                max-width: 90%;
-                margin: 0 auto;
-                font-size: 18px;
-            }
+        .cta-primary, .cta-secondary {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 90%;
+        }
 
-            .hero-text h1 {
-                font-size: 32px;
-                line-height: 1.4;
-            }
+        .cta-primary {
+            background-color: #260ac9;
+            color: #ffffff;
+        }
 
-            .hero-animation {
-                max-width: 80%;
-                margin: 20px auto;
-            }
-
-            .header-section {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: #ffffff;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                padding: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .process-steps {
-                flex-direction: column;
-                align-items: center;
-            }
+        .cta-secondary {
+            background-color: #ffffff;
+            color: #260ac9;
+            border: 2px solid #260ac9;
         }
     </style>
 </head>
@@ -190,17 +184,20 @@
     <!-- Header Section -->
     <header class="header-section">
         <div class="header-logo">
-            <img src="https://github.com/iLLi8/trustkanga/blob/main/637c9c773b83dec8fc74754f_Transparent%20Logo-p-130x130q80.png" alt="TrustKanga Logo">
+            <img src="https://github.com/iLLi8/trustkanga/blob/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg" alt="TrustKanga Logo">
         </div>
-    <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About Us</a>
-    <a href="https://trustkanga.blogspot.com/2024/12/how-escrow-works-shield-against-online.html" target="_blank">Blog</a>
-    <a href="contact.html">Contact</a>
-</nav>
-
-
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="https://trustkanga.blogspot.com/2024/12/how-escrow-works-shield-against-online.html" target="_blank" rel="noopener noreferrer">Blog</a>
+            <a href="contact.html">Contact</a>
+        </nav>
         <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
     </header>
 
     <!-- Hero Section -->
