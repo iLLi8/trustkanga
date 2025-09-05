@@ -1,248 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TrustKanga - Your Shield Against Payment Fraud</title>
-    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
-        /* General styles */
-        body {
-            font-family: 'Noto Sans', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        /* Header Section */
-        .header-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 40px;
-            background-color: #ffffff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+  <title>TrustKanga — Secure Escrow for UK Buyers & Sellers</title>
+  <meta name="description" content="Say goodbye to online scams. TrustKanga keeps payments safe in escrow until buyers are satisfied — a simple, secure way for UK buyers and sellers to transact online." />
+  <link rel="canonical" href="https://www.trustkanga.com/" />
+  <meta name="robots" content="index, follow" />
 
-        .header-logo img {
-            max-width: 180px;
-        }
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="TrustKanga" />
+  <meta property="og:title" content="TrustKanga — Secure Escrow for UK Buyers & Sellers" />
+  <meta property="og:description" content="Say goodbye to online scams. TrustKanga keeps payments safe in escrow until buyers are satisfied — a simple, secure way for UK buyers and sellers to transact online." />
+  <meta property="og:url" content="https://www.trustkanga.com/" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/iLLi8/trustkanga/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg" />
+  <meta property="og:locale" content="en_GB" />
 
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TrustKanga — Secure Escrow for UK Buyers & Sellers" />
+  <meta name="twitter:description" content="Say goodbye to online scams. TrustKanga keeps payments safe in escrow until buyers are satisfied." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/iLLi8/trustkanga/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg" />
 
-        .nav-links a {
-            text-decoration: none;
-            color: #4d4d4d;
-            font-weight: bold;
-        }
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "TrustKanga",
+    "url": "https://www.trustkanga.com",
+    "logo": "https://raw.githubusercontent.com/iLLi8/trustkanga/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg",
+    "sameAs": [
+      "https://www.instagram.com/trustkanga"
+    ]
+  }
+  </script>
 
-        .nav-links a:hover {
-            color: #260ac9;
-        }
+  <!-- (Optional) Favicon if you add one at /favicon.ico -->
+  <!-- <link rel="icon" href="/favicon.ico"> -->
 
-        .mobile-menu {
-            display: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
-        /* Hero Section */
-        .hero-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 40px;
-            background-color: #ffffff;
-        }
+  <style>
+    /* General styles */
+    body { font-family: 'Noto Sans', sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; }
 
-        .hero-text {
-            max-width: 50%;
-        }
+    /* Header Section */
+    .header-section { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+    .header-logo img { max-width: 180px; }
+    .nav-links { display: flex; gap: 20px; }
+    .nav-links a { text-decoration: none; color: #4d4d4d; font-weight: bold; }
+    .nav-links a:hover { color: #260ac9; }
+    .mobile-menu { display: none; font-size: 1.5rem; cursor: pointer; }
 
-        .hero-text h1 {
-            color: #233dff;
-            font-size: 64px;
-            line-height: 1.2;
-        }
+    /* Hero Section */
+    .hero-section { display: flex; justify-content: space-between; align-items: center; padding: 40px; background-color: #ffffff; }
+    .hero-text { max-width: 50%; }
+    .hero-text h1 { color: #233dff; font-size: 64px; line-height: 1.2; }
+    .hero-text p { font-size: 18px; color: #555; }
+    .hero-animation { max-width: 50%; }
 
-        .hero-text p {
-            font-size: 18px;
-            color: #555;
-        }
+    /* Process Section */
+    .process-section { text-align: center; padding: 40px 20px; background-color: #f9f9f9; }
+    .process-section h2 { font-size: 2rem; color: #333; margin-bottom: 20px; }
+    .process-section p { font-size: 1rem; color: #555; margin-bottom: 40px; }
+    .process-steps { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .step { text-align: center; max-width: 150px; }
+    .step i { font-size: 2rem; color: #260ac9; }
+    .step p { font-size: 0.9rem; color: #333; line-height: 1.4; }
 
-        .hero-animation {
-            max-width: 50%;
-        }
-
-        /* Process Section */
-        .process-section {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: #f9f9f9;
-        }
-
-        .process-section h2 {
-            font-size: 2rem;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .process-section p {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 40px;
-        }
-
-        .process-steps {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .step {
-            text-align: center;
-            max-width: 150px;
-        }
-
-        .step i {
-            font-size: 2rem;
-            color: #260ac9;
-        }
-
-        .step p {
-            font-size: 0.9rem;
-            color: #333;
-            line-height: 1.4;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .hero-section {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-text {
-                max-width: 90%;
-                margin: 0 auto;
-            }
-
-            .hero-text h1 {
-                font-size: 32px;
-                line-height: 1.4;
-            }
-
-            .hero-animation {
-                max-width: 90%;
-                margin: 20px auto;
-            }
-
-            .header-section {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background-color: #ffffff;
-                position: absolute;
-                top: 70px;
-                right: 0;
-                width: 100%;
-                padding: 10px;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .process-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .hero-section { flex-direction: column; text-align: center; }
+      .hero-text { max-width: 90%; margin: 0 auto; }
+      .hero-text h1 { font-size: 32px; line-height: 1.4; }
+      .hero-animation { max-width: 90%; margin: 20px auto; }
+      .header-section { flex-wrap: wrap; justify-content: space-between; }
+      .nav-links { display: none; flex-direction: column; background-color: #ffffff; position: absolute; top: 70px; right: 0; width: 100%; padding: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+      .nav-links.active { display: flex; }
+      .mobile-menu { display: block; }
+      .process-steps { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header-section">
-        <div class="header-logo">
-            <img src="https://raw.githubusercontent.com/iLLi8/trustkanga/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg" alt="TrustKanga Logo">
-        </div>
-        <nav class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="/blog/index.html">Blog</a>
+  <!-- Header Section -->
+  <header class="header-section">
+    <div class="header-logo">
+      <img src="https://raw.githubusercontent.com/iLLi8/trustkanga/main/replicate-prediction-ytdbk9vqgnrg80ckp0mrd2wx4m.jpg" alt="TrustKanga Logo">
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="/blog/index.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+  </header>
 
-            <a href="contact.html">Contact</a>
-        </nav>
-        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
-    </header>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>Your Shield Against Payment Fraud with Secure Escrow Services</h1>
+      <p>Say goodbye to online scams with TrustKanga's secure escrow services. Our platform ensures your money is safely held until all terms of the transaction are met, offering a fraud-free and worry-free experience for both buyers and sellers.</p>
+    </div>
+    <div class="hero-animation">
+      <dotlottie-player
+        src="https://lottie.host/c378788d-856a-4a8f-b946-26ca4f3cdf13/Kd0Blj5UrE.lottie"
+        background="transparent"
+        speed="1"
+        style="width: 300px; height: 300px"
+        loop
+        autoplay>
+      </dotlottie-player>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-text">
-            <h1>Your Shield Against Payment Fraud with Secure Escrow Services</h1>
-            <p>Say goodbye to online scams with TrustKanga's secure escrow services. Our platform ensures your money is safely held until all terms of the transaction are met, offering a fraud-free and worry-free experience for both buyers and sellers.</p>
-        </div>
-        <div class="hero-animation">
-            <dotlottie-player 
-                src="https://lottie.host/c378788d-856a-4a8f-b946-26ca4f3cdf13/Kd0Blj5UrE.lottie" 
-                background="transparent" 
-                speed="1" 
-                style="width: 300px; height: 300px" 
-                loop 
-                autoplay>
-            </dotlottie-player>
-        </div>
-    </section>
+  <!-- Process Section -->
+  <section class="process-section">
+    <h2>Get ready for a safer, smarter way to transact online — launching soon!</h2>
+    <p>TrustKanga is designed to eliminate the risks of online transactions. Whether you're buying, selling, or exchanging services, we provide a secure platform that keeps your money safe until you're 100% satisfied.</p>
+    <div class="process-steps">
+      <div class="step">
+        <i class="fas fa-handshake"></i>
+        <p><strong>1. Buyer and Seller agree to terms</strong></p>
+      </div>
+      <div class="step">
+        <i class="fas fa-money-check"></i>
+        <p><strong>2. Buyer deposits funds into TrustKanga's secure escrow account</strong></p>
+      </div>
+      <div class="step">
+        <i class="fas fa-box-open"></i>
+        <p><strong>3. Seller delivers goods or services</strong></p>
+      </div>
+      <div class="step">
+        <i class="fas fa-thumbs-up"></i>
+        <p><strong>4. Buyer approves goods or services</strong></p>
+      </div>
+      <div class="step">
+        <i class="fas fa-lock"></i>
+        <p><strong>5. TrustKanga releases payment to seller</strong></p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Process Section -->
-    <section class="process-section">
-        <h2>Get ready for a safer, smarter way to transact online  launching soon!</h2>
-        <p>TrustKanga is designed to eliminate the risks of online transactions. Whether you're buying, selling, or exchanging services, we provide a secure platform that keeps your money safe until you're 100% satisfied.</p>
-        <div class="process-steps">
-            <div class="step">
-                <i class="fas fa-handshake"></i>
-                <p><strong>1. Buyer and Seller agree to terms</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-money-check"></i>
-                <p><strong>2. Buyer deposits funds into TrustKanga's secure escrow account.</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-box-open"></i>
-                <p><strong>3. Seller delivers goods or services</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-thumbs-up"></i>
-                <p><strong>4. Buyer approves goods or services</strong></p>
-            </div>
-            <div class="step">
-                <i class="fas fa-lock"></i>
-                <p><strong>5. TrustKanga releases payment to seller</strong></p>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
-
 
